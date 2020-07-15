@@ -1,0 +1,8 @@
+these are the Fourier coefficients by condition and participant output
+from the matlab file.
+
+row index - trials
+
+column index - (electrode 1 .. 32 ) + 32*(freq 1 .. 58)
+
+load.jl will load them.

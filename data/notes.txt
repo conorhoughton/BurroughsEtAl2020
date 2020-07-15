@@ -1,0 +1,64 @@
+52 words in a trial
+
+150 trials for each of six conditions
+25 trials a condition
+
+20 participants
+
+32 electrodes
+
+MATLAB structure
+
+freq_data
+
+-> folder for each condition
+   -> folder for each participant
+
+inside the participant folders:
+
+freq  -> 58 frequency values
+
+21 - 1.5625 matches the phrase rate
+45 - 3.125  matches the sentence rate
+
+label -> 32 names of electrodes
+
+fourierspctrm: NX32X58 complex numbers
+(trial number)X(electrode)X(frequency)
+
+N values - varies for participant and condition
+
+
+P1:
+rrrV 22
+rrrr 44
+AVAV 16
+ADVP 26
+ANAN 22
+PhMi 22
+
+which adds up to 152
+
+16
+rrrV 22
+rrrr 22
+AVAV 16
+ADVP 20
+ANAN 22
+PhMi 22
+
+which adds up to 124
+
+___________________
+
+exporting
+
+writematrix(freq_data.ADVP.P1.fourierspctrm(:,:,:),"~/git/BurroughsEtAl2020/data/ADVP.P1.fs.dat")
+
+row index - trials
+
+along each row it is in blocks of 32 electrodes with 58 blocks
+
+(e1 . . . . e32) (e1 . . . . e32)  . . .
+ f1               f2               . . .
+
